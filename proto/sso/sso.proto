@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "makyaro.sso.v1;ssov1";
+
+service Auth {
+    rpc Register (RegisterRequset) returns (RegisterResponse);
+}
+
+message RegisterRequset {
+    string email = 1;  // user email
+    string password = 2;
+}
